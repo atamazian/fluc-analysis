@@ -11,7 +11,7 @@
 import numpy as np
 import scipy.special
 import cmath
-from mfdfa import mfdfa
+from mfdfa import mfdfa, getHurst
 from fgnoise import fgnoise
 
 def schriber(x, h, htol, maxitr):
@@ -26,7 +26,7 @@ def schriber(x, h, htol, maxitr):
         y = fgnoise(n, h1)
         p = sorted(range(len(y)),key=lambda x:y[x])
         y[p] = x
-        he = mfdfa(y, scale, 2, 1)[0]
+        he = getHurst(scale, mfdfa(y, scale, 2, 1)[1])
         h1 = h1 + (h1 - he)
         itr = itr +1
     return y, he, itr
