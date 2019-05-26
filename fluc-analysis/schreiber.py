@@ -14,7 +14,7 @@ import cmath
 from mfdfa import mfdfa, getHurst
 from fgnoise import fgnoise
 
-def schriber(x, h, htol, maxitr):
+def schreiber_schmitz(x, h, htol, maxitr):
     itr = 0
     h1 = h
     he = 0
