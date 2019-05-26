@@ -26,7 +26,7 @@ def schriber(x, h, htol, maxitr):
         y = fgnoise(n, h1)
         p = sorted(range(len(y)),key=lambda x:y[x])
         y[p] = x
-        he = mfdfa(y, scale, 2, 2)[0]
+        he = mfdfa(y, scale, 2, 1)[0]
         h1 = h1 + (h1 - he)
         itr = itr +1
     return y, he, itr
