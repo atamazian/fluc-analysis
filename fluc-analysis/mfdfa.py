@@ -53,6 +53,6 @@ def mfdfa(y, scale, q=2, m=1):
     Output:             1, Hurst exponent
 '''
  
- def getHurst(scale, F):
+def getHurst(scale, F):
     return np.polyfit(np.log10(scale),np.log10(F), 1)[0]
 
