@@ -64,9 +64,7 @@ def get_hurst(scale, F):
 			3, num: number of scales
     Output:             1, scale vector, int
 '''
-def create_logscale(start=1, stop, num):
-    n = len(data)
+def create_logscale(start, stop, num):
     scale = np.logspace(np.log10(start), np.log10(stop), num)
-    scale = scale.astype(int)
-    return scale
+    return scale.astype(int)
 
