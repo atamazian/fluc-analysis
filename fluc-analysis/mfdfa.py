@@ -53,6 +53,20 @@ def mfdfa(y, scale, q=2, m=1):
     Output:             1, Hurst exponent
 '''
  
-def getHurst(scale, F):
+def get_hurst(scale, F):
     return np.polyfit(np.log10(scale),np.log10(F), 1)[0]
+
+'''
+    This function is used for creation of log spaced scale vector (base = 10) which is used during MF-DFA
+    Input parameters:   1, start:  start is the starting value of the scale vector. By default, start=1
+                        2, stop: the final value of the sequence. Usually it's set to n/4 where 
+			   n is the size of analyzed time series
+			3, num: number of scales
+    Output:             1, scale vector, int
+'''
+def create_logscale(start=1, stop, num):
+    n = len(data)
+    scale = np.logspace(np.log10(start), np.log10(stop), num)
+    scale = scale.astype(int)
+    return scale
 
