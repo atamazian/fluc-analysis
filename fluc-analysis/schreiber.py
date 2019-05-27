@@ -20,7 +20,7 @@ def schreiber_schmitz(x, h, htol, maxitr):
     he = 0
     n = len(x)
     x = np.sort(x)
-    scale = create_logscale(1, n/4, 100)
+    scale = create_logscale(10, n/4, 100)
     while((he < h-htol)|(he > h+htol))&(itr < maxitr):
         y = fgnoise(n, h1)
         p = sorted(range(len(y)),key=lambda x:y[x])
