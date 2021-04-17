@@ -27,8 +27,8 @@ def mfdfa(y, scale, q=2, m=1):
         ns = int(np.floor(n/scale[i]))         #number of segments: Ns = int(N/s)
 		
         ind = np.arange(ns*scale[i], dtype=int)
-        index = np.split(ind, ns)
-        yv = np.split(y[ind], ns)
+        index = np.array_split(ind, ns)
+        yv = np.array_split(y[ind], ns)
         RMSt = np.empty(ns)
         
         def seg_fit(v):
