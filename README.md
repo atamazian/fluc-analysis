@@ -1,2 +1,2 @@
 # fluc-analysis
-Various programs for fluctuation analysis (DFA, etc.)
+Package for fluctuation analysis (DFA, etc.)
