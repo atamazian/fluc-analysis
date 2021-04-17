@@ -4,7 +4,7 @@ from fluc_analysis.mfdfa import mfdfa, get_hurst
 def main():
     n = 1_000_000
     print(f'Generating a white noise sample with length of {n}...')
-    x = np.random.normal(size=1_000_000)
+    x = np.random.normal(size=n)
     scale = np.logspace(np.log10(10**1), np.log10(10**5), 30)
     print('Calculating Hurst exponent for the sample with DFA2...')
     _, F = mfdfa(x, scale, m=2)
