@@ -8,7 +8,7 @@ import scipy.special
 import cmath
 
 def fgnoise(n, h):
-    w = np.linspace(2*np.pi/n, np.pi, n/2-1)
+    w = np.linspace(2*np.pi/n, np.pi, int(n/2-1))
     aw = 2*np.sin(np.pi*h)*scipy.special.gamma(2*h+1)*(1-np.cos(w))
     d = -2*h-1
     d1 = -2*h
